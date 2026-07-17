@@ -1,0 +1,174 @@
+---
+name: paper-reading
+description: Use when discovering, recommending, reading, explaining, summarizing, or explicitly organizing academic papers from arXiv links, PDFs, local files, search results, or an Obsidian paper vault; especially for research-direction-aware paper discovery, Chinese Markdown notes, section-by-section walkthroughs, robotics/VLA papers, figure-aware notes, metadata extraction, TeX/source-assisted reading, and explicit paper-library maintenance.
+---
+
+# Paper Reading
+
+Use this skill to help the user actually understand a paper before turning it into durable notes.
+
+Default to Simplified Chinese for explanations and note bodies. Keep English terms when they are standard technical names.
+
+## Core Workflow
+
+1. Identify the paper source: arXiv URL/ID, PDF URL, local PDF path, or an existing vault entry.
+2. Extract or verify metadata: title, authors, year, venue, arXiv ID, DOI, code, dataset, and stable dedupe key when available.
+3. Build a reading map before deep explanation: paper objective, section structure, key figures, a figure map, method spine, experiment spine, and likely uncertainty points.
+4. Explain in layers: problem background -> method structure -> inputs/outputs -> training supervision -> experiments -> limitations.
+5. Treat figures conservatively: prioritize framework diagrams, model diagrams, and experimental result figures. Use source assets first when available; automatic PDF extraction is only candidate generation.
+6. Produce Markdown-first output: by default, write detailed layered explanations or detailed notes. When writing those notes to local files or a vault, also present the current reading installment in the user-facing response; do not answer only with file paths or a brief summary unless the user explicitly asks for file-only output. Use concise summaries, recap tables, or compressed notes only when the user explicitly asks for them.
+7. If writing to a vault, maintain notes, metadata, PDFs, assets, and navigation/index pages, then verify the result with local evidence.
+
+Do not organize or audit the entire paper vault during ordinary reading, search, or single-note creation. Use the note organization workflow only when the user explicitly asks to organize, tidy, rebuild indexes, audit, check, repair, or manage the paper note library or vault.
+
+## Paper Discovery Workflow
+
+Use this workflow when the user asks to find, search, discover, recommend, or shortlist papers for a research direction or current question.
+
+1. Clarify or infer the active research direction, current problem, and reading depth needed. If a vault or historical notes are available, inspect them for repeated topics, preferred paper types, and already-read work.
+2. Gather candidates from credible sources. Prefer primary sources such as conference proceedings, journal pages, arXiv records, publisher pages, project pages, and the user's own vault metadata. Use current web search when recency matters.
+3. Do not return a raw link list. Filter candidates before presenting them, and separate top-tier venues, mature arXiv work, early arXiv preprints, and weakly evidenced papers.
+4. Judge candidates by field fit, source authority, experiment depth, relation to the user's current question, and whether they are worth slow reading.
+5. Present a candidate shortlist with reasons: why recommended, which direction it belongs to, how it connects to the current question, evidence strength, caveats, and a suggested action.
+
+Read `references/paper-discovery.md` before producing a paper recommendation shortlist or search strategy.
+
+## Note Organization Workflow
+
+Use this workflow only for explicit note-library management requests, not as an automatic side effect of paper reading or note creation.
+
+1. Resolve the vault conservatively: explicit path first, then `PAPER_READING_VAULT`, `PAPER_NOTE_VAULT`, existing vault markers, or `./paper-vault`.
+2. Scan existing `papers/metadata/*.json` and `papers/notes/*.md`. Prefer metadata JSON; use Markdown frontmatter or the first heading only as fallback.
+3. Rebuild pure-Markdown navigation pages by topic, method, year, venue, status, project, and priority. Keep updates idempotent with stable dedupe keys.
+4. Report missing metadata, notes, PDFs, assets, weak organization fields, invalid metadata JSON, and duplicate dedupe keys. Do not delete, move, or rewrite user notes unless the user explicitly asks.
+5. Use `scripts/organize_library.py` for full-vault organization. Use `scripts/maintain_library.py` for one-paper vault writes.
+
+Read `references/vault-organization.md` before organizing, auditing, repairing, or rebuilding a paper vault.
+
+## Output Preferences
+
+Do not force a fixed note template. Let the current paper and user goal decide the structure.
+
+Stable preferences:
+
+- Chinese prose by default; keep technical English terms when useful.
+- Start with a reading map when the user says they want to read slowly, fully understand, or "慢慢来".
+- Default to detailed section-by-section explanation and notes. Do not compress to a short summary by default.
+- Compress into Markdown tables, method-grouped short notes, or concise recap only when the user explicitly asks for brevity, summary, review material, recap, tables, or compression.
+- Avoid empty macro headings such as "总览", "速览", "统一理解", or "总结" unless the user asks for them.
+- Do not add heading numbers by default.
+- For formulas and equations, keep the main formula in readable rendered LaTeX by default; follow it with concise Chinese variable explanations and intuition. In the variable explanations, write display-friendly symbols or plain names (for example `theta^1` as `θ¹`, `pi_theta` as `πθ`, `D_text` as `Dtext`) instead of raw LaTeX fragments such as `$\\theta^{1}$` or `$\\pi_\\theta$`. Provide copyable LaTeX source only when the user asks.
+- For robotics, VLA, imitation learning, and post-training papers, preserve inputs, outputs, hardware assumptions, data sources, supervision labels, control frequencies, evaluation tasks, and failure boundaries.
+- Tables default to Markdown, especially result tables, ablations, benchmark comparisons, and small-font PDF tables. Use screenshots only as supporting visual evidence after readability checks.
+- When a paper's figures are central to understanding, include a small set of high-value source figures in the final Markdown note by default unless the user asks for text-only output.
+- Default paper notes should be durable Markdown. If current context exposes an applicable skill or tool for lightweight presentation enhancement, use it only after the content draft is complete, keep Markdown as canonical, and do not hard-code a specific enhancer.
+- Durable files are not a substitute for the chat answer. For reading maps, section walkthroughs, polished notes, or recap artifacts, mirror the newly produced or currently relevant content in the response so the user can read it without opening the file. For long artifacts, present the completed installment or the highest-value sections with figures/tables, then link the full file as secondary context.
+
+Read `references/note-style.md` when producing a polished note, Markdown table, or recap artifact.
+
+## Fact Boundaries
+
+Keep these categories separate:
+
+- What the paper explicitly claims.
+- What the authors experimentally verify.
+- What can be inferred from figures, equations, or released artifacts.
+- What requires source code, official docs, or follow-up verification.
+- Engineering recommendations beyond the paper.
+- Related work or broader field context.
+
+If the paper does not specify a training detail, model component, hardware assumption, or data source, say so directly instead of filling it in.
+
+For foundation-model or post-training papers, separate upstream base-model facts from the current paper's post-training or adaptation facts.
+
+## Source Handling
+
+PDF is the canonical source. Use arXiv TeX/source only to improve section lookup, equation reading, figure naming, source image lookup, and citation tracing.
+
+For two-column PDFs or noisy extracted text, prefer cross-checking:
+
+1. PDF metadata and rendered pages.
+2. Raw `pdftotext` output.
+3. arXiv source if available.
+4. Figure previews and captions.
+
+Do not treat layout-extracted text as authoritative when section order is visibly wrong.
+
+## Figure Handling
+
+For paper images and figures, follow this source-first order by default: original arXiv/source asset, converted source PDF/EPS asset, reviewed PDF crop/render, and whole-page render only as a last-resort context aid. `scripts/extract_tex_source.py` reports `image_files`, `graphics_refs`, and `source_image_assets`; pass `--convert-images` when preparing Markdown-visible assets from source PDF/EPS figures. Prefer source assets for framework diagrams, architecture diagrams, and result plots when they match the final PDF.
+
+Keep PDF rendering/cropping as a fallback. Source images may be missing, split into subfigures, generated by TeX/TikZ, stored as PDF/EPS that needs conversion, or differ from the final camera-ready PDF. Use `scripts/extract_figures.py` only as a candidate generator. It may render pages and identify likely figure captions, but it should not be treated as final visual truth.
+
+For slow reading or "完全读懂" requests, create a figure map before section-by-section explanation:
+
+- Key figure or table.
+- Concept, mechanism, or result it explains.
+- The section or reading step where it should be shown.
+
+During slow reading, preview or render the relevant figure in a temporary location before explaining the mechanism it supports when practical. Do not persist figure assets unless producing a note, vault entry, or user-requested artifact.
+
+Do not only inspect figures internally during slow reading. `view_image` or any other local preview only verifies the figure for the agent; it does not show the figure to the user. Before explaining a core mechanism, include the relevant original figure, table, screenshot, or rendered asset in the user-facing response when available. If no relevant visual source exists, say so before explaining from text or equations.
+
+For user-facing slow-reading responses that depend on a rendered or local figure, the final response must contain a Markdown image tag with an absolute path, for example `![Figure 1](/absolute/path/figure-1.png)`. If the figure is already visible through another user-facing artifact, mention that artifact explicitly. Do not treat an internal preview, extracted path, or prose description as satisfying the visual requirement.
+
+For tables, dense plots, small-font screenshots, or wide `table*` results, do not use a whole-page PDF render as the primary reading artifact. Tables default to Markdown with the key values transcribed and checked against the PDF/source. Use a tightly cropped screenshot only as supporting evidence or when the table layout itself matters. If using any screenshot or crop, render at high enough DPI, crop to the relevant content, preview it, and include it only if labels and numbers are readable in chat.
+
+Before sending a slow-reading response that uses visual material, do a screenshot judgment:
+
+- Is the image sourced from the best available source asset, or is there a reason a PDF crop/render is being used?
+- If it is a table or small-font result, did you provide a Markdown table with the key values?
+- If a screenshot is included, is it tightly focused on the relevant content and readable without opening the PDF separately?
+- If any answer is no, crop tighter, render at higher DPI, transcribe the values, or explain why the visual cannot be shown clearly.
+
+Prefer high-value figures:
+
+- Overall framework or pipeline.
+- Model architecture or data flow.
+- Key training/evaluation setup.
+- Main result or ablation table/plot.
+
+When writing Markdown notes, place selected figures near the corresponding explanation rather than in a separate gallery. Use `scripts/maintain_library.py --insert-figures` only as a managed fallback, or with `--figures-anchor` when the note has an explicit insertion point. Do not use both hand-written figure blocks and manifest-driven insertion for the same note. For non-vault notes, create a nearby `assets/<note-slug>/` directory and use relative image paths. For vault notes, use the vault assets layout. For every figure shown in chat or referenced from Markdown notes, generate or select a white-background display version by default and reference that display version; keep original transparent or dark-background source assets only as provenance when useful.
+
+When source images are not usable or auto-cropping is weak, use diagnostics plus a reviewed manual crop manifest. Never block note creation only because figure extraction failed.
+
+Read `references/failure-cases.md` before debugging figure, PDF extraction, vault, or index issues.
+
+## Vault Workflow
+
+When the user asks to archive or maintain a paper library, default vault layout is:
+
+```text
+paper-vault/
+└── papers/
+    ├── notes/
+    ├── metadata/
+    ├── pdfs/
+    ├── assets/
+    └── navigation/
+```
+
+Use scripts as helpers, not as user-facing manual steps:
+
+- `scripts/doctor.py`: check local tools, vault writability, and optional network status. Optional network checks should not make local readiness fail unless `--require-network` is used.
+- `scripts/ingest_paper.py`: extract metadata and write JSON.
+- `scripts/extract_tex_source.py`: fetch arXiv source for source-assisted reading and source image lookup.
+- `scripts/extract_figures.py`: render pages and produce figure candidates or manual-crop assets.
+- `scripts/maintain_library.py`: update notes, metadata, PDFs, assets, index, and navigation idempotently.
+- `scripts/organize_library.py`: explicitly organize an existing paper vault, rebuild navigation pages, and write a non-destructive health report.
+
+Do not create persistent process files such as `task_plan.md`, `findings.md`, or `progress.md` unless the user explicitly asks for them.
+
+## Verification
+
+Match verification to the work performed:
+
+- For slow-reading chat responses: if the explanation relies on a figure or table, check before sending that the response includes a visible image/table artifact or an explicit reason it cannot be shown. For local images in Codex desktop, use an absolute-path Markdown image tag such as `![Figure](/absolute/path.png)`.
+- For paper images and figures: verify source-first handling. Prefer source assets; if using PDF crops/renders, confirm source assets were unavailable, unsuitable, or not matching the final PDF.
+- For table-heavy or small-font material: verify readability, not just presence. Tables should be Markdown by default. Whole-page screenshots are not sufficient unless the table/plot remains legible; otherwise crop the relevant area or transcribe the key values into Markdown.
+- For local PDF/vault work: verify files exist, metadata JSON parses, PDFs are present, and index/navigation content is updated.
+- For scripts: run syntax checks and focused tests.
+- For index/navigation: rerun maintenance where practical and confirm no duplicate dedupe entries.
+- Do not use git status as proof when the vault is not a git repository.
+
+If network checks fail but local inputs are sufficient, continue with local evidence and report that network availability was optional.

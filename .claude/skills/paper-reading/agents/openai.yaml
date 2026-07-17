@@ -1,0 +1,7 @@
+interface:
+  display_name: "Paper Reading"
+  short_description: "Discover, read, and organize papers into Chinese notes"
+  default_prompt: "Use $paper-reading to recommend papers for my current research question, explain why each candidate matters, then read the selected paper slowly with key figures and detailed Chinese Markdown notes."
+
+policy:
+  allow_implicit_invocation: true
