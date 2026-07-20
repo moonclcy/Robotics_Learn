@@ -1,0 +1,26 @@
+{
+  "dedupe_key": "arxiv:2506.16685",
+  "arxiv_id": "2506.16685",
+  "arxiv_version": "v5",
+  "title": "Compliant Residual DAgger: Improving Real-World Contact-Rich Manipulation with Human Corrections",
+  "authors": [
+    "Xiaomeng Xu",
+    "Yifan Hou",
+    "Chendong Xin",
+    "Zeyi Liu",
+    "Shuran Song"
+  ],
+  "affiliations": ["Stanford / REALab (Shuran Song's group)"],
+  "venue": "NeurIPS 2025 (extended arXiv version)",
+  "year": 2025,
+  "primary_category": "cs.RO",
+  "secondary_category": ["cs.LG"],
+  "keywords": ["DAgger", "Imitation Learning", "Manipulation", "Compliance Control", "Residual Policy"],
+  "abs_url": "https://arxiv.org/abs/2506.16685",
+  "pdf_url": "https://arxiv.org/pdf/2506.16685v5",
+  "project_page": "https://compliant-residual-dagger.github.io/",
+  "code_url": "https://github.com/yifan-hou/force_control",
+  "published": "2025-06-20",
+  "updated": "2025-12-25",
+  "topics": ["contact-rich manipulation", "human-in-the-loop learning", "residual policy", "admittance control", "diffusion policy", "kinesthetic teaching"]
+}
