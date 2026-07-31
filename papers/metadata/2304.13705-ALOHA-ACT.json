@@ -1,0 +1,26 @@
+{
+  "dedupe_key": "arxiv:2304.13705",
+  "arxiv_id": "2304.13705",
+  "arxiv_version": "v1",
+  "title": "Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware",
+  "authors": [
+    "Tony Z. Zhao",
+    "Vikash Kumar",
+    "Sergey Levine",
+    "Chelsea Finn"
+  ],
+  "affiliations": ["Stanford University", "UC Berkeley", "Meta"],
+  "venue": "RSS 2023",
+  "doi": "10.15607/rss.2023.xix.016",
+  "year": 2023,
+  "primary_category": "cs.RO",
+  "secondary_category": ["cs.LG"],
+  "keywords": ["ALOHA", "ACT", "Action Chunking", "Imitation Learning", "Teleoperation", "Bimanual Manipulation", "CVAE", "Transformer"],
+  "abs_url": "https://arxiv.org/abs/2304.13705",
+  "pdf_url": "https://arxiv.org/pdf/2304.13705",
+  "project_page": "https://tonyzhaozh.github.io/aloha/",
+  "code_url": "https://github.com/tonyzhaozh/act",
+  "published": "2023-04-23",
+  "updated": "2023-04-23",
+  "topics": ["imitation learning", "teleoperation", "bimanual manipulation", "action chunking", "low-cost hardware", "fine manipulation"]
+}
