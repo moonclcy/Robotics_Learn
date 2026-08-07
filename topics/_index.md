@@ -9,3 +9,4 @@
 
 - **note-capture** — Claude Code 主题聚合式知识库 skill，把对话合并到主题笔记而非流水账。tags: tools, claude-code, obsidian, knowledge-base
 - **obsidian-git** — Obsidian Git 插件、多设备 vault 同步、vault 根与 .git 目录配对。tags: tools, obsidian, git, sync
+- **force-aware-manipulation** — 接触密集操作里力信号怎么用(感知/预测/执行三层),FoAR/FAWAM/CR-DAgger 对比谱系。tags: force-aware, contact-rich, imitation-learning, manipulation

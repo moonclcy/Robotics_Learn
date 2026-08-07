@@ -1,0 +1,28 @@
+{
+  "dedupe_key": "arxiv:2411.15753",
+  "arxiv_id": "2411.15753",
+  "arxiv_version": "v2",
+  "title": "FoAR: Force-Aware Reactive Policy for Contact-Rich Robotic Manipulation",
+  "authors": [
+    "Zihao He",
+    "Hongjie Fang",
+    "Jingjing Chen",
+    "Hao-Shu Fang",
+    "Cewu Lu"
+  ],
+  "affiliations": ["Shanghai Jiao Tong University (Cewu Lu's group)"],
+  "venue": "arXiv preprint (ICRA 2025 submission)",
+  "year": 2024,
+  "primary_category": "cs.RO",
+  "secondary_category": ["cs.LG", "cs.AI"],
+  "keywords": ["Force-Aware", "Reactive Policy", "Contact-Rich Manipulation", "Multimodal Fusion", "Future Contact Prediction"],
+  "abs_url": "https://arxiv.org/abs/2411.15753",
+  "pdf_url": "https://arxiv.org/pdf/2411.15753v2",
+  "pdf_path": "papers/pdfs/2411.15753-FoAR.pdf",
+  "slug": "2411.15753-FoAR",
+  "project_page": "https://tonyfang.net/FoAR/",
+  "published": "2024-11-24",
+  "status": "reading",
+  "abstract": "Contact-rich tasks present significant challenges for robotic manipulation policies due to the complex dynamics of contact and the need for precise control. Vision-based policies often struggle with the skill required for such tasks, as they typically lack critical contact feedback modalities like force/torque information. To address this issue, we propose FoAR, a force-aware reactive policy that combines high-frequency force/torque sensing with visual inputs to enhance the performance in contact-rich manipulation. Built upon the RISE policy, FoAR incorporates a multimodal feature fusion mechanism guided by a future contact predictor, enabling dynamic adjustment of force/torque data usage between non-contact and contact phases. Its reactive control strategy also allows FoAR to accomplish contact-rich tasks accurately through simple position control.",
+  "topics": ["contact-rich manipulation", "force/torque sensing", "imitation learning", "multimodal fusion", "future contact prediction", "RISE policy"]
+}

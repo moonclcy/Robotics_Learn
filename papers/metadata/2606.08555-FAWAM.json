@@ -1,0 +1,28 @@
+{
+  "dedupe_key": "arxiv:2606.08555",
+  "arxiv_id": "2606.08555",
+  "arxiv_version": "v2",
+  "title": "FAWAM: Force-Aware World Action Models for Closed-Loop Contact-Rich Manipulation",
+  "authors": [
+    "Haotian He",
+    "Zeyu Yan",
+    "Qipeng Liu",
+    "Ning Guo",
+    "Wenzhao Lian"
+  ],
+  "affiliations": ["Peking University", "Shanghai Jiao Tong University"],
+  "venue": "arXiv preprint",
+  "year": 2026,
+  "primary_category": "cs.RO",
+  "secondary_category": ["cs.LG", "cs.AI"],
+  "keywords": ["World Action Model", "Force-Aware Policy", "Contact-Rich Manipulation", "Wrench Prediction", "Residual Correction"],
+  "abs_url": "https://arxiv.org/abs/2606.08555",
+  "pdf_url": "https://arxiv.org/pdf/2606.08555v2",
+  "pdf_path": "papers/pdfs/2606.08555-FAWAM.pdf",
+  "slug": "2606.08555-FAWAM",
+  "project_page": "https://fawam.github.io",
+  "published": "2026-06-12",
+  "status": "reading",
+  "abstract": "Force signals provide critical interaction cues for contact-rich robotic manipulation. However, existing methods mostly use force as an additional observation modality, without fully exploiting its role in modeling future interaction dynamics or guiding execution-time feedback correction. In this paper, we propose FAWAM, a force-aware world action model that incorporates force information at three levels: perception, prediction, and closed-loop execution. FAWAM first encodes historical 6-axis force/torque signals to modulate action generation, then jointly predicts future actions and end-effector wrenches to explicitly model contact evolution. It further introduces a residual correction module that uses the predicted wrench trajectory as an execution-time reference to refine actions online based on real-time force feedback.",
+  "topics": ["contact-rich manipulation", "world action model", "wrench prediction", "residual correction", "flow matching", "AdaLN-Zero", "GE-Act"]
+}
