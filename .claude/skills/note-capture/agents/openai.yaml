@@ -1,0 +1,4 @@
+interface:
+  display_name: "Note Capture"
+  short_description: "Merge conversations into an Obsidian knowledge base"
+  default_prompt: "Use $note-capture to merge this conversation into my topic-organized Obsidian knowledge base."

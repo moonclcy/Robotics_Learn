@@ -1,6 +1,6 @@
 # note-capture
 
-Merges Claude Code conversations into a **topic-aggregated knowledge base** at `~/Note/Robotics_Learn`. Instead of one file per chat, each save-chat call folds new content into an existing topic note (or creates a new one), so subjects grow more complete rather than fragmenting.
+Merges Claude Code or Codex conversations into a **topic-aggregated knowledge base** at `~/Note/Robotics_Learn`. Instead of one file per chat, each save-chat call folds new content into an existing topic note (or creates a new one), so subjects grow more complete rather than fragmenting.
 
 Companion to `paper-reading` (which handles papers).
 
@@ -109,4 +109,4 @@ Conflicting info is never deleted — old statement is kept with an "更新于 Y
 
 ## Cross-device
 
-Skill lives inside vault (`.claude/skills/note-capture/`). Sync via Obsidian Git. New devices: `bash setup.sh` at vault root to symlink into `~/.claude/skills/`.
+Skill lives inside vault (`.claude/skills/note-capture/`). Sync via Obsidian Git. On a new device, run `bash setup.sh` at the vault root to link it into both `~/.claude/skills/` (Claude Code) and `~/.agents/skills/` (Codex).

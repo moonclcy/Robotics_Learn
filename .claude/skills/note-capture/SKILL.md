@@ -1,11 +1,11 @@
 ---
 name: note-capture
-description: Merge conversation content into a topic-aggregated knowledge base at ~/Note/Robotics_Learn. Instead of one-file-per-chat, each save-chat call intelligently merges new content into an existing topic note (or creates a new topic), keeping a growing knowledge base rather than a chat log. Triggered by `Use $note-capture to <command>` or natural language like "整理笔记 / save this chat". Paper-related requests are delegated to the paper-reading skill.
+description: Merge Claude Code or Codex conversation content into a topic-aggregated knowledge base at ~/Note/Robotics_Learn. Instead of one-file-per-chat, each save-chat call intelligently merges new content into an existing topic note (or creates a new topic), keeping a growing knowledge base rather than a chat log. Use for explicit `$note-capture` commands or natural-language requests such as "整理笔记" and "save this chat". Paper-related requests are delegated to the paper-reading skill.
 ---
 
 # Note Capture — Topic-Aggregated Knowledge Base
 
-Merges Claude Code conversations into a living, topic-organized knowledge base. Unlike traditional per-chat archiving, this skill folds new content into existing topic notes so a subject grows more complete over time rather than fragmenting across many files.
+Merges Claude Code or Codex conversations into a living, topic-organized knowledge base. Unlike traditional per-chat archiving, this skill folds new content into existing topic notes so a subject grows more complete over time rather than fragmenting across many files.
 
 Companion to the `paper-reading` skill (which handles academic papers).
 
@@ -213,8 +213,10 @@ title, slug, tags, created, updated, sources, related
 
 **Raw archive**:
 ```yaml
-date, source: Claude Code, conversation_hash, topics_touched: [<slugs>]
+date, source: Claude Code | Codex, conversation_hash, topics_touched: [<slugs>]
 ```
+
+Set `source` to the client currently running the skill. Do not label Codex conversations as Claude Code.
 
 **Inbox** (minimal):
 ```yaml

@@ -1,8 +1,8 @@
 # Robotics_Learn Vault
 
-Obsidian 笔记 + Claude Code skills 的一体化知识库。配套两个 skill：
+Obsidian 笔记 + Claude Code/Codex skills 的一体化知识库。配套两个 skill：
 
-- **`note-capture`** — 把 Claude Code 对话**聚合到主题笔记**，形成活的知识库（不是流水账）
+- **`note-capture`** — 把 Claude Code 或 Codex 对话**聚合到主题笔记**，形成活的知识库（不是流水账）
 - **`paper-reading`** — 论文精读、笔记、vault 维护
 
 跨设备通过 Obsidian Git 插件同步。
@@ -33,15 +33,16 @@ Robotics_Learn/
 # 1. 克隆 vault
 git clone <your-repo-url> ~/Note/Robotics_Learn
 
-# 2. 把 vault 内的 skills 暴露到全局
+# 2. 把 vault 内的 skills 暴露给 Claude Code 和 Codex
 cd ~/Note/Robotics_Learn
 bash setup.sh
 
 # 3. 验证
 ls -la ~/.claude/skills/
+ls -la ~/.agents/skills/
 ```
 
-之后在任意目录 `claude`，两个 skill 都可用。
+之后在任意目录启动 Claude Code 或 Codex，两个 skill 都可用。如果当前会话未刷新 skill 列表，请重启客户端。
 
 ---
 
@@ -130,7 +131,7 @@ ls -la ~/.claude/skills/
 
 ### 辅助脚本
 
-在 `~/.claude/skills/paper-reading/scripts/`：
+脚本可通过 `~/.claude/skills/paper-reading/scripts/` 或 `~/.agents/skills/paper-reading/scripts/` 访问：
 
 ```bash
 export PAPER_READING_VAULT=~/Note/Robotics_Learn
@@ -185,4 +186,5 @@ claude
 
 - 原始设计计划：`~/.claude/plans/skills-nested-garden.md`
 - Claude Code 全局 skills 目录：`~/.claude/skills/`
+- Codex 全局 skills 目录：`~/.agents/skills/`
 - Obsidian Git 插件：Obsidian → Settings → Community plugins → Git
