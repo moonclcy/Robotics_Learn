@@ -119,15 +119,15 @@ ls -la ~/.agents/skills/
 
 ### 常用调用
 
-| 场景 | 示例 |
-|---|---|
-| 精读 arXiv 论文 | `Use $paper-reading to read this paper slowly: https://arxiv.org/abs/2401.xxxxx` |
-| 精读本地 PDF | `Use $paper-reading to read this local PDF slowly: /path/to/paper.pdf` |
+| 场景           | 示例                                                                                   |
+| ------------ | ------------------------------------------------------------------------------------ |
+| 精读 arXiv 论文  | `Use $paper-reading to read this paper slowly: https://arxiv.org/abs/2401.xxxxx`     |
+| 精读本地 PDF     | `Use $paper-reading to read this local PDF slowly: /path/to/paper.pdf`               |
 | 转成中文详细笔记（带图） | `Use $paper-reading to turn this paper into a detailed Chinese Markdown note: <URL>` |
-| 论文推荐 | `Use $paper-reading to recommend papers for <research question>` |
-| 论文发现 | `Use $paper-reading to find recent papers related to <direction>` |
-| 单篇入库 | `Use $paper-reading to maintain my paper vault for this paper: <URL>` |
-| vault 整体维护 | `Use $paper-reading to organize my paper vault` |
+| 论文推荐         | `Use $paper-reading to recommend papers for <research question>`                     |
+| 论文发现         | `Use $paper-reading to find recent papers related to <direction>`                    |
+| 单篇入库         | `Use $paper-reading to maintain my paper vault for this paper: <URL>`                |
+| vault 整体维护   | `Use $paper-reading to organize my paper vault`                                      |
 
 ### 辅助脚本
 

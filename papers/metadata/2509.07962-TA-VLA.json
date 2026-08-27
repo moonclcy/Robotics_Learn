@@ -1,0 +1,32 @@
+{
+  "dedupe_key": "arxiv:2509.07962",
+  "arxiv_id": "2509.07962",
+  "arxiv_version": "v1",
+  "title": "TA-VLA: Elucidating the Design Space of Torque-aware Vision-Language-Action Models",
+  "authors": [
+    "Zongzheng Zhang",
+    "Haobo Xu",
+    "Zhuo Yang",
+    "Chenghao Yue",
+    "Zehao Lin",
+    "Huan-ang Gao",
+    "Ziwei Wang",
+    "Hao Zhao"
+  ],
+  "affiliations": ["Beijing Academy of Artificial Intelligence (BAAI)", "Institute for AI Industry Research (AIR), Tsinghua University", "Nanyang Technological University"],
+  "corresponding_author": "Hao Zhao (zhaohao@air.tsinghua.edu.cn)",
+  "venue": "CoRL 2025",
+  "year": 2025,
+  "primary_category": "cs.RO",
+  "secondary_category": [],
+  "keywords": ["Torque-aware", "Joint Torque", "VLA", "pi0", "Action-Torque Diffusion", "Contact-Rich Manipulation", "Design Space", "HSIC"],
+  "abs_url": "https://arxiv.org/abs/2509.07962",
+  "pdf_url": "https://arxiv.org/pdf/2509.07962v1",
+  "pdf_path": "papers/pdfs/2509.07962-TA-VLA.pdf",
+  "slug": "2509.07962-TA-VLA",
+  "project_page": "https://zzongzheng0918.github.io/Torque-Aware-VLA.github.io/",
+  "published": "2025-09-09",
+  "status": "reading",
+  "abstract": "Many robotic manipulation tasks require sensing and responding to force signals such as torque to assess whether the task has been successfully completed and to enable closed-loop control. However, current Vision-Language-Action (VLA) models lack the ability to integrate such subtle physical feedback. In this work, we explore Torque-aware VLA models, aiming to bridge this gap by systematically studying the design space for incorporating torque signals into existing VLA architectures. We identify and evaluate several strategies, leading to three key findings. First, introducing torque adapters into the decoder consistently outperforms inserting them into the encoder. Second, torque history proves to be a critical signal, and summarizing the entire history into a single token preserves the decoder's input pattern. Third, inspired by joint prediction and planning paradigms in autonomous driving, we propose predicting torque as an auxiliary output, which further improves performance.",
+  "topics": ["torque-aware VLA", "joint torque sensing", "sensorless force estimation", "action-torque diffusion", "contact-rich manipulation", "pi0 / RDT adaptation"]
+}

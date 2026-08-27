@@ -11,3 +11,4 @@
 
 - [[papers/notes/2411.15753-FoAR|FoAR：Force-Aware Reactive Policy]] — arXiv 2024（SJTU），学未来接触概率 φ 门控力融合 + reactive control。 <!-- dedupe: arxiv:2411.15753 -->
 - [[papers/notes/2606.08555-FAWAM|FAWAM：Force-Aware World Action Models]] — arXiv 2026（PKU+SJTU），世界模型联合预测动作+未来 wrench，力差值驱动残差纠正闭环。 <!-- dedupe: arxiv:2606.08555 -->
+- [[papers/notes/2509.07962-TA-VLA|TA-VLA：Torque-aware VLA 设计空间]] — CoRL 2025，无传感器关节力矩(电机电流反算)塞进预训练 VLA：进 decoder / 历史压单 token / 预测未来力矩。 <!-- dedupe: arxiv:2509.07962 -->
