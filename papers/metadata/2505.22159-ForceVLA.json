@@ -1,0 +1,22 @@
+{
+  "dedupe_key": "arxiv:2505.22159",
+  "arxiv_id": "2505.22159",
+  "arxiv_version": "v3",
+  "title": "ForceVLA: Enhancing VLA Models with a Force-aware MoE for Contact-rich Manipulation",
+  "authors": ["Jiawen Yu", "Hairuo Liu", "Qiaojun Yu", "Jieji Ren", "Ce Hao", "Haitong Ding", "Guangyu Huang", "Guofan Huang", "Yan Song", "Panpan Cai", "Cewu Lu", "Wenqiang Zhang"],
+  "affiliations": ["Fudan University", "Shanghai Jiao Tong University (Cewu Lu's group)", "等"],
+  "venue": "arXiv preprint",
+  "year": 2025,
+  "primary_category": "cs.RO",
+  "secondary_category": ["cs.LG"],
+  "keywords": ["Force-aware", "Mixture-of-Experts", "FVLMoE", "VLA", "pi0", "6-axis force", "contact-rich", "late fusion", "flow matching"],
+  "abs_url": "https://arxiv.org/abs/2505.22159",
+  "pdf_url": "https://arxiv.org/pdf/2505.22159v3",
+  "pdf_path": "papers/pdfs/2505.22159-ForceVLA.pdf",
+  "slug": "2505.22159-ForceVLA",
+  "project_page": "https://sites.google.com/view/forcevla2025/",
+  "published": "2025-05-28",
+  "status": "reading",
+  "abstract": "Vision-Language-Action (VLA) models have advanced general-purpose robotic manipulation by leveraging pretrained visual and linguistic representations. However, they struggle with contact-rich tasks that require fine-grained control involving force, especially under visual occlusion or dynamic uncertainty. To address these limitations, we propose ForceVLA, a novel end-to-end manipulation framework that treats external force sensing as a first-class modality within VLA systems. ForceVLA introduces FVLMoE, a force-aware Mixture-of-Experts fusion module that dynamically integrates pretrained visual-language embeddings with real-time 6-axis force feedback during action decoding.",
+  "topics": ["force-aware VLA", "MoE multimodal fusion", "6-axis wrench", "contact-rich manipulation", "pi0 adaptation", "late fusion after VLM"]
+}
