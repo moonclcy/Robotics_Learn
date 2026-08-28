@@ -1,0 +1,22 @@
+{
+  "dedupe_key": "arxiv:2602.23648",
+  "arxiv_id": "2602.23648",
+  "arxiv_version": "v1",
+  "title": "FAVLA: A Force-Adaptive Fast-Slow VLA model for Contact-Rich Robotic Manipulation",
+  "authors": ["Yao Li", "Peiyuan Tang", "Wuyang Zhang", "Chengyang Zhu", "Yifan Duan", "Weikai Shi", "Xiaodong Zhang", "Zijiang Yang", "Jianmin Ji", "Yanyong Zhang"],
+  "affiliations": ["USTC 等 (Yanyong Zhang / Jianmin Ji 组，据作者推断)"],
+  "venue": "arXiv preprint",
+  "year": 2026,
+  "primary_category": "cs.RO",
+  "secondary_category": [],
+  "keywords": ["Force-Adaptive", "Fast-Slow", "VLA", "pi0", "6-axis force", "high-frequency", "reactive control", "force adapter", "adaptive inference frequency", "force variance prediction", "flow matching"],
+  "abs_url": "https://arxiv.org/abs/2602.23648",
+  "pdf_url": "https://arxiv.org/pdf/2602.23648v1",
+  "pdf_path": "papers/pdfs/2602.23648-FAVLA.pdf",
+  "slug": "2602.23648-FAVLA",
+  "project_page": null,
+  "published": "2026-02-27",
+  "status": "reading",
+  "abstract": "Force/torque feedback can substantially improve VLA models on contact-rich manipulation, but most existing approaches fuse all modalities at a single operating frequency, ignoring mismatched sensor sampling rates and forcing downsampling of high-frequency contact cues. FAVLA is a force-adaptive fast-slow VLA that decouples slow perception planning from fast contact-aware control: a slow VLM runs at fixed low frequency to encode modalities and predict near-future force variation, while a fast action expert executes at a variable high frequency conditioned on the latest force. A force adapter injects high-frequency force features into multiple AE layers, and AE execution frequency is adaptively scheduled by the predicted force variation.",
+  "topics": ["force-adaptive VLA", "fast-slow / dual-frequency", "high-frequency reactive control", "force injection via cross-attention", "adaptive inference frequency", "contact force reduction", "pi0 adaptation"]
+}

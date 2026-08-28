@@ -61,12 +61,15 @@ related: [[paper-reading]]
 ### 待补充(占位，读到再填)
 
 这条线后续值得读、可往本页补的候选(FAWAM related work 提到)：
-- **ForceVLA** — 力感知 MoE 融合进 VLA(FAWAM 的力感知 baseline 之一)
-- **TA-VLA** — 用力/力矩预测当 VLA 的辅助目标
+- ~~**ForceVLA**~~ — ✅已读,力感知 MoE 融入 VLA。见 [[2505.22159-ForceVLA]] 及姊妹页 [[力信息如何融入模型]]
+- ~~**TA-VLA**~~ — ✅已读,力/力矩当 VLA 辅助目标 + 单 token 进 decoder。见 [[2509.07962-TA-VLA]]
 - **Force Policy** — interaction frame 下的混合力位控制
 - **FACTR** — force-attending 课程训练 + 力反馈主从遥操系统(FAWAM/本页多篇的数据采集基础)
-- **RDP** — 低频 latent diffusion + 高频 fast policy 的力闭环细化(慢基座+快纠错的另一实例)
+- ~~**RDP**~~ — 查证为**视觉-触觉**(2503.02881),按无触觉约束排除
 - **ACP** — 从示教学时空近似顺应,限制接触力同时保持跟踪
+- **FAVLA** — ✅已读,快-慢双频 VLA,力高频闭环细化。见 [[2602.23648-FAVLA]]
+
+> **姊妹页**:[[力信息如何融入模型]] 从"力怎么进模型(架构/融合机制)"角度整合了 TA-VLA / ForceVLA / FAVLA + 本页的 FoAR / FAWAM。
 
 ## 变更日志
 
