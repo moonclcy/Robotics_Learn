@@ -1,0 +1,22 @@
+{
+  "dedupe_key": "arxiv:2502.17432",
+  "arxiv_id": "2502.17432",
+  "arxiv_version": "v2",
+  "title": "FACTR: Force-Attending Curriculum Training for Contact-Rich Policy Learning",
+  "authors": ["Jason Jingzhou Liu", "Yulong Li", "Kenneth Shaw", "Tony Tao", "Ruslan Salakhutdinov", "Deepak Pathak"],
+  "affiliations": ["Carnegie Mellon University"],
+  "venue": "arXiv preprint",
+  "year": 2025,
+  "primary_category": "cs.RO",
+  "secondary_category": ["cs.LG"],
+  "keywords": ["Force-Attending", "Curriculum Training", "external joint torque", "behavior cloning", "ACT", "bilateral teleoperation", "force feedback", "object generalization", "NTK", "contact-rich"],
+  "abs_url": "https://arxiv.org/abs/2502.17432",
+  "pdf_url": "https://arxiv.org/pdf/2502.17432v2",
+  "pdf_path": "papers/pdfs/2502.17432-FACTR.pdf",
+  "slug": "2502.17432-FACTR",
+  "project_page": "https://jasonjzliu.com/factr/",
+  "published": "2025-02-24",
+  "status": "reading",
+  "abstract": "Many contact-rich tasks humans perform rely on force feedback, but this information, readily available in most robot arms, is not commonly used in teleoperation and policy learning. FACTR presents (1) a low-cost bilateral teleoperation setup that relays external follower-arm forces back to the teacher arm, and (2) a policy learning method employing a curriculum that corrupts visual input with decreasing intensity throughout training. The curriculum prevents a transformer policy from over-fitting to vision and guides it to attend to the force modality, improving generalization to unseen objects by ~40% over a no-curriculum force baseline.",
+  "topics": ["force-attending curriculum", "external joint torque", "behavior cloning / ACT", "vision-force fusion", "object generalization", "bilateral force-feedback teleoperation", "NTK analysis"]
+}
